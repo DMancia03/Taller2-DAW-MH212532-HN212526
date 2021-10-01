@@ -153,6 +153,8 @@ function   escogerProducto(productos){
             var cantidad = document.createElement('input')
             cantidad.type = 'number'
             cantidad.value  ="1"
+            cantidad.min = 0;
+            cantidad.max =50;
             cantidad.id = e.id + "_number"
             div.appendChild(cantidad)
 
@@ -166,8 +168,9 @@ function   escogerProducto(productos){
             inputFinal.value = total; 
 
             document.getElementById(e.id + "_number").onchange = function(){
-                if(this.value == 0){
-                    div = null
+                if(this.value === 0){
+                   document.getElementById(e.id + "_box")= null
+                   
                 }else{
                     var cantidad = this.value; 
                     var precio = document.getElementById(e.id + "_hd").value
