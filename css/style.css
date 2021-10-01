@@ -189,6 +189,11 @@ input[type = 'checkbox']{
     border: none;
 }
 
+.img-full{
+    height: 10em;
+    max-height: 10em;
+}
+
 /*---------------------------------------------------------*/
 
 @media (max-width: 768px) {
