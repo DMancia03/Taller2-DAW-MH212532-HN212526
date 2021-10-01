@@ -1,42 +1,20 @@
 {
-    "acompañante1" : {
-        "nombre" : "Ensalada",
-        "precio" : "1.50"
+    "superCombo" : {
+        "ingredientes" : [
+            "3 piezas de pollo", "Ensalada", "Papa frita", "Bebida grande"
+        ],
+        "precio" : "7.25"
     },
-    "acompañante2" : {
-        "nombre" : "Papa frita",
-        "precio" : "1.25"
+    "comboPersonal" : {
+        "ingredientes" : [
+            "2 piezas de pollo", "Papa frita", "Bebida mediana"
+        ],
+        "precio" : "5.75"
     },
-    "pollo1" : {
-        "nombre" : "Pieza de pollo grande",
-        "precio" : "1.75"
-    },
-    "pollo2" : {
-        "nombre" : "Pieza de pollo mediana",
-        "precio" : "1.50"
-    },
-    "pollo3" : {
-        "nombre" : "Pieza de pollo pequeña",
-        "precio" : "1.25"
-    },
-    "bebida1" : {
-        "nombre" : "Bebida grande",
-        "precio" : "1.50"
-    },
-    "bebida2" : {
-        "nombre" : "Bebida mediana",
-        "precio" : "1.25"
-    },
-    "bebida3" : {
-        "nombre" : "Bebida pequeña",
-        "precio" : "1.00"
-    },
-    "bebida4" : {
-        "nombre" : "Café 0.50",
-        "precio" : "1.50"
-    },
-    "postre" : {
-        "nombre" : "Postre",
-        "precio" : "1.25"
+    "comboInfantil" : {
+        "ingredientes" : [
+            "1 pieza de pollo", "Papa frita", "Bebida pequeña"
+        ],
+        "precio" : "3.50"
     }
 }
