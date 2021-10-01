@@ -63,7 +63,7 @@ const productos = {
     }
 }
 //Objeto JSON ----------------------------------------------------
-
+var total = 0;
 window.onload = Inicio;
 
 var comboanterior;
@@ -156,6 +156,7 @@ function escogerMenu(menu){
             if(comboanterior!=undefined){
                 var menos =  parseFloat( menu[comboanterior]['precio']);
                 total = cuentaactual-menos
+               
                 inputFinal.value = total;
             }
             menucart.innerHTML = "";
@@ -189,10 +190,9 @@ function escogerMenu(menu){
 
                 }
             }
- 
+            total += precio;
             menucart.appendChild(div);
-            alert(cuentaactual+precio);
-            inputFinal.value = cuentaactual+precio
+            inputFinal.value = total
             comboanterior = e.id;
         })
     })
