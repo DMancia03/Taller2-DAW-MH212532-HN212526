@@ -108,8 +108,10 @@ function hiddenComentarios() {
     var sugerencia = document.getElementById("txtSugerencia");
     var comentario = document.getElementById("comentarios");
 
-    comentario.className = "hidden";
-    sugerencia.className = "txtSugerencia";
+    if( comentario.className != "hidden" ){
+        comentario.className = "hidden";
+        sugerencia.className = "txtSugerencia";
+    }
 }
 
 function hiddenTxt() {
