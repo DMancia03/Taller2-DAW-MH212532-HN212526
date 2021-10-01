@@ -17,14 +17,16 @@ function Inicio(){
 }
 
 function escogerMenu(menu){
+    var inputFinal = document.getElementById('txtFinal');
     var menucart = document.getElementById('menu');
     document.getElementsByName('combos').forEach(e=>{
         e.addEventListener('click', function(){
-            menucart.innerHTML = "";
+            //menucart.innerHTML = "";
             var div = document.createElement('div')
             div.className = "comida"
             var nombre = document.createElement('div')
             var a ;
+            var precio = menu[e.id]['precio'][0];
             switch(e.id){
                 case "comboInfantil":
                     a = "Combo Infantil"
@@ -49,7 +51,7 @@ function escogerMenu(menu){
 
                 }
             }
-            
+            var cuentaactual = 
             menucart.appendChild(div);
 
 

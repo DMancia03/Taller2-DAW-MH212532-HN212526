@@ -12,6 +12,7 @@
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 .header{
     display: flex;
@@ -97,6 +98,17 @@ input[type = 'radio']{
 #carrito div{
     height: 50%;
 }
+#compras{
+    grid-row: span 2;
+    height: 100%;
+}
+#compras>#compras2{
+    overflow-y: auto;
+    height: 100%;
+}
+#compras>#compras2>div{
+    height: 50%;
+}
 .h3{
     color: var(--cafe2); 
     font-family: 'Lobster', cursive;
@@ -129,7 +141,18 @@ input[type = 'radio']{
     flex-direction: row;
     justify-content: center;
     font-size: larger;
+    width: 100%;
     color: rgb(148, 148, 148);
+}
+.precioInput label{
+    width: 50%;
+}
+#txtFinal{
+    border: none;
+    background-color: white;
+    font-size: 1.3em;
+    width: fit-content;
+    width: 30%;
 }
 .btnComprar p{
     color:  white;
