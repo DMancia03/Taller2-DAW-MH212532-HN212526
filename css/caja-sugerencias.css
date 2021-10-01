@@ -2,7 +2,7 @@
     --azul : #275AA9;
     --azul2 : #4489A8;
     --azulFuerte : #011826;
-    --azuelSuave: #03588C;
+    --azuelSuave: #2B97E4;
     --amarillo: #FFEA04;
     --cafe1:#D3983F;
     --cafe2: #E07F5E;
@@ -20,10 +20,11 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
     color: var(--azulFuerte);
+    gap: 1em;
 }
 
 .text-sug-1{
-    background-color: var(--azul2);
+    background-color: var(--azuel2);
     color: var(--azulFuerte);
     border: var(--azulFuerte) solid 2px;
     border-radius: 1rem;
@@ -33,6 +34,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     resize: none;
     outline: none;
+}
+
+.text-sug-change{
+    background-color: var(--azuelSuave);
+}
+
+.text-sug-1::placeholder{
+    color: var(--azulFuerte);
 }
 
 #caja-img-sugerencia{
@@ -45,4 +54,12 @@
     display: block;
     width: 10em;
     max-width: 10em;
+}
+
+@media (max-width: 768px) {
+    #caja-sugerencias{
+        grid-template-columns: 1fr;
+        padding: 1em;
+        box-sizing: content-box;
+    }
 }
