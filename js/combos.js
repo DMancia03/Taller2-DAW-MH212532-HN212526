@@ -19,6 +19,17 @@ function Inicio(){
         escogerMenu(menu);
     }
 
+
+    request.open('GET', '../db/productos.json');
+    //El tipo de datos que  vamos a obtener
+    request.responseType = 'json';
+    request.send();
+    //función en la cual nos vamos a guiar cuando se termine de leer el JSON
+    request.onload =  function() {
+        const productos = request.response;
+        escogerProducto(productos);
+    }
+
     //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
 
     comentario.addEventListener("click", function() {
@@ -44,7 +55,32 @@ function Inicio(){
     //PARTE DE MENU
     
 }
+function   escogerProducto(productos){
+    var inputFinal = document.getElementById('txtFinal');
+    var menucart = document.getElementById('demas');
+    document.getElementsByName('otros').forEach(e=>{
+        e.addEventListener('click', function(){
+            var cuentaactual = parseFloat(inputFinal.value)
+            var div = document.createElement('div')
+            div.className = "comida"
+            var nombre = document.createElement('div')
+            var a ;
+         
+            var precio = parseFloat(productos[e.id]['precio']);
+            nombre.innerHTML += `<p class='name'>${productos[e.id]['nombre']} </p>`
+          
+            div.appendChild(nombre);
+            var cantidad = document.createElement('input')
+            cantidad.type = 'number'
+            cantidad.value  ="1"
+            div.appendChild(cantidad)
+            menucart.appendChild(div);
 
+            inputFinal.value = cuentaactual+precio
+            comboanterior = e.id;
+        })
+    })
+}
 function escogerMenu(menu){
     var inputFinal = document.getElementById('txtFinal');
     var menucart = document.getElementById('menu');

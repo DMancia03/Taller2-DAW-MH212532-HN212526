@@ -95,6 +95,9 @@ body{
 input[type = 'radio']{
     display: none;
 }
+input[type = 'checkbox']{
+    display: none;
+}
 #carrito{
    display: grid;
    grid-template-rows: repeat(4,1fr);
@@ -165,7 +168,11 @@ input[type = 'radio']{
     height: 3em;
     padding: 5px;
 }
-
+#demas .comida{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: 5px;
+}
 .comida{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
