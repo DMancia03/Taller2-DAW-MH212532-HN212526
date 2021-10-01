@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 :root{
     --azul : #275AA9;
+    --azul2 : #4489A8;
+    --azulFuerte : #011826;
+    --azuelSuave: #2B97E4;
     --amarillo: #FFEA04;
     --cafe1:#D3983F;
     --cafe2: #E07F5E;
     --beich: #F2D8C3;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -118,15 +122,7 @@ input[type = 'radio']{
     height: min-content;
     padding: 1em;
 }
-#menu .comida{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    
-}
-#menu .comida div{
-    padding: 1em;
-}
+
 .btnComprar, .precioInput{
     grid-row: 3/4;
     padding: 1em;
@@ -163,6 +159,28 @@ input[type = 'radio']{
     text-align: center;
     cursor: pointer;
 }
+
+/*---------------------------------------------------------*/
+#menu .comida{
+    height: 3em;
+    padding: 5px;
+}
+
+.comida{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: 5px;
+}
+
+.comida:nth-child(even){
+    background-color: var(--azul2);
+}
+
+.comida:nth-child(odd){
+    background-color: var(--azuelSuave);
+}
+
+/*---------------------------------------------------------*/
 
 @media (max-width: 768px) {
     #body{
