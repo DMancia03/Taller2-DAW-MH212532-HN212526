@@ -34,22 +34,27 @@ body{
 #body article{
    height: 80vh;
    border: solid 1px;
-   padding: 2em;
+   padding: 1em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 #body article h1{
     font-size:  1.5em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+  
 }
 .caja{
     border: solid 2px gray;
-    width: 300px ;
+    width: 200px ;
     height: max-content;
     border-radius: 5px;
-
+    margin: 0  auto;
 }
 .caja .imagen-combo{
-    width: 300px ;
+    width: 200px ;
    position: relative;
 }
 .caja .imagen-combo .btnCheck{
@@ -63,6 +68,14 @@ body{
 }
 .caja .texto-combo{
     padding: 1.2em;
+}
+#Menus{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    margin-top: 1%;
+    height: 90%;
+    width: 100%;
 }
 @media (max-width: 768px) {
     #body{
