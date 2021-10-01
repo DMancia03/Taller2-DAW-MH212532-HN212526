@@ -35,10 +35,13 @@ body{
    height: 80vh;
    border: solid 1px;
    padding: 1em;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+
+}
+#body .myMenus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #body article h1{
     font-size:  1.5em;
@@ -88,10 +91,11 @@ input[type = 'radio']{
     display: none;
 }
 #carrito{
-    justify-content: space-between;
+   display: grid;
+   grid-template-rows: repeat(4,1fr);
 }
 #carrito div{
-    height: 33.33%;
+    height: 50%;
 }
 .h3{
     color: var(--cafe2); 
@@ -111,7 +115,31 @@ input[type = 'radio']{
 #menu .comida div{
     padding: 1em;
 }
-
+.btnComprar, .precioInput{
+    grid-row: 3/4;
+    padding: 1em;
+    font-family: sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.precioInput{
+    flex-direction: row;
+    justify-content: center;
+    font-size: larger;
+    color: rgb(148, 148, 148);
+}
+.btnComprar p{
+    color:  white;
+    background-color: #275AA9;
+    height: min-content;
+    width: 50%; 
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+}
 
 @media (max-width: 768px) {
     #body{

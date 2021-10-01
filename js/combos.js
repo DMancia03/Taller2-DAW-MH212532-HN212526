@@ -40,7 +40,7 @@ function escogerMenu(menu){
             nombre.innerHTML += `<p class='name'>${a} </p>`
           
             div.appendChild(nombre);
-           /* var menuIn = menu[e.id]['ingredientes']
+           var menuIn = menu[e.id]['ingredientes']
             for(var index = 0 ; index <= 4; index++){
                 if(menuIn[index] == undefined){
 
@@ -48,7 +48,7 @@ function escogerMenu(menu){
                     div.innerHTML += `<p>${menuIn[index]}</p>`
 
                 }
-            }*/
+            }
             
             menucart.appendChild(div);
 
