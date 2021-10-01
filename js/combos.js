@@ -9,7 +9,7 @@ function Inicio(){
     const request = new XMLHttpRequest();
     
     //pedimos abrir el JSON con los menus
-    request.open('GET', '../db/combos.json');
+    request.open('GET', '/js/combosDB.json');
     //El tipo de datos que  vamos a obtener
     request.responseType = 'json';
     request.send();
@@ -155,6 +155,8 @@ function escogerMenu(menu){
                 }
             }
             var cuentaactual = inputFinal.value;
+            console.log(cuentaactual);
+            console.log(precio);
             var cuenta = parseFloat(cuentaactual)+parseFloat(precio).toFixed(2)
             inputFinal.value = cuenta;
             menucart.appendChild(div);
