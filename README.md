@@ -1,3 +1,3 @@
 # Universidad Don Bosco
-Keneth Alexis Hernández Nolasco\n
-Diego Fernando Mancía Hernández
+- Keneth Alexis Hernández Nolasco
+- Diego Fernando Mancía Hernández
