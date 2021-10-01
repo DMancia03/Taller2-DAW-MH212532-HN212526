@@ -10,6 +10,9 @@
     padding: 0;
     margin: 0;
 }
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .header{
     display: flex;
     justify-content:  center;
@@ -38,11 +41,33 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
+.caja{
+    border: solid 2px gray;
+    width: 300px ;
+    height: max-content;
+    border-radius: 5px;
 
+}
+.caja .imagen-combo{
+    width: 300px ;
+   position: relative;
+}
+.caja .imagen-combo .btnCheck{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: xx-large;
+}
+.caja .imagen-combo img{
+    width: 100%;
+}
+.caja .texto-combo{
+    padding: 1.2em;
+}
 @media (max-width: 768px) {
     #body{
         grid-template-columns: 1fr 0.5fr;
     
-    
+        
     }
 }
