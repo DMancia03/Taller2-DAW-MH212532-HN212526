@@ -1,3 +1,26 @@
+//Objeto JSON ----------------------------------------------------
+const combosDB = {
+    "superCombo" : {
+        "ingredientes" : [
+            "3 piezas de pollo", "Ensalada", "Papa frita", "Bebida grande"
+        ],
+        "precio" : "7.25"
+    },
+    "comboPersonal" : {
+        "ingredientes" : [
+            "2 piezas de pollo", "Papa frita", "Bebida mediana"
+        ],
+        "precio" : "5.75"
+    },
+    "comboInfantil" : {
+        "ingredientes" : [
+            "1 pieza de pollo", "Papa frita", "Bebida pequeña"
+        ],
+        "precio" : "3.50"
+    }
+}
+//Objeto JSON ----------------------------------------------------
+
 window.onload = Inicio;
 
 var comboanterior;
@@ -9,7 +32,7 @@ function Inicio(){
     const request = new XMLHttpRequest();
     
     //pedimos abrir el JSON con los menus
-    request.open('GET', '/js/combosDB.json');
+    /*request.open('GET', '/js/combosDB.json');
     //El tipo de datos que  vamos a obtener
     request.responseType = 'json';
     request.send();
@@ -17,7 +40,8 @@ function Inicio(){
     request.onload =  function() {
         const menu = request.response;
         escogerMenu(menu);
-    }
+    }*/
+    escogerMenu(combosDB);
 
     //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
 
