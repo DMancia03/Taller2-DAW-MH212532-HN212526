@@ -3,7 +3,6 @@ window.onload = function(){
 
     comentario.addEventListener("click", function() {
         hiddenComentarios();
-        alert("1");
     });
 
     comentario.onclick = hiddenComentarios;
