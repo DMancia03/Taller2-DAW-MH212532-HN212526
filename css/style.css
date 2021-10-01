@@ -87,7 +87,12 @@ body{
 input[type = 'radio']{
     display: none;
 }
-
+#carrito{
+    justify-content: space-between;
+}
+#carrito div{
+    height: 33.33%;
+}
 .h3{
     color: var(--cafe2); 
     font-family: 'Lobster', cursive;
@@ -97,6 +102,16 @@ input[type = 'radio']{
     height: min-content;
     padding: 1em;
 }
+#menu .comida{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+#menu .comida div{
+    padding: 1em;
+}
+
 
 @media (max-width: 768px) {
     #body{
