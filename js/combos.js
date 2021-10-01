@@ -130,6 +130,7 @@ function   escogerProducto(productos){
             var cuentaactual = parseFloat(inputFinal.value)
             var div = document.createElement('div')
             div.className = "comida"
+            div.id = e.id + "_box"
             var nombre = document.createElement('div')
             var a ;
          
@@ -140,10 +141,29 @@ function   escogerProducto(productos){
             var cantidad = document.createElement('input')
             cantidad.type = 'number'
             cantidad.value  ="1"
+            cantidad.id = e.id + "_number"
             div.appendChild(cantidad)
-            menucart.appendChild(div);
 
-            inputFinal.value = cuentaactual+precio
+            var inputHidden = document.createElement('input')
+            inputHidden.type = 'hidden';
+            inputHidden.value = productos[e.id]['precio'];
+            inputHidden.id = e.id + "_hd"
+            div.appendChild(inputHidden)
+            menucart.appendChild(div);
+            total = cuentaactual+precio
+            inputFinal.value = total; 
+
+            document.getElementById(e.id + "_number").onchange = function(){
+                if(this.value == 0){
+                    div = null
+                }else{
+                    var cantidad = this.value; 
+                    var precio = document.getElementById(e.id + "_hd").value
+                    total-=precio
+                    total += cantidad*precio;
+                    inputFinal.value = total; 
+                }
+            }
         })
     })
 }
