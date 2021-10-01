@@ -1,3 +1,26 @@
+//Objeto JSON ----------------------------------------------------
+const combosDB = {
+    "superCombo" : {
+        "ingredientes" : [
+            "3 piezas de pollo", "Ensalada", "Papa frita", "Bebida grande"
+        ],
+        "precio" : "7.25"
+    },
+    "comboPersonal" : {
+        "ingredientes" : [
+            "2 piezas de pollo", "Papa frita", "Bebida mediana"
+        ],
+        "precio" : "5.75"
+    },
+    "comboInfantil" : {
+        "ingredientes" : [
+            "1 pieza de pollo", "Papa frita", "Bebida pequeña"
+        ],
+        "precio" : "3.50"
+    }
+}
+//Objeto JSON ----------------------------------------------------
+
 window.onload = Inicio;
 
 var comboanterior;
@@ -9,7 +32,7 @@ function Inicio(){
     const request = new XMLHttpRequest();
     
     //pedimos abrir el JSON con los menus
-    request.open('GET', '../db/combos.json');
+    /*request.open('GET', '/js/combosDB.json');
     //El tipo de datos que  vamos a obtener
     request.responseType = 'json';
     request.send();
@@ -17,7 +40,8 @@ function Inicio(){
     request.onload =  function() {
         const menu = request.response;
         escogerMenu(menu);
-    }
+    }*/
+    escogerMenu(combosDB);
 
 
     request.open('GET', '../db/productos.json');
@@ -158,3 +182,54 @@ function hiddenTxt() {
     }
 }
 //FUNCIONES: CAJA DE SUGERENCIAS  --------------------------------------------
+
+//FUNCIONES DEL MENU
+
+
+function escogerMenu(menu){
+    var inputFinal = document.getElementById('txtFinal');
+    var menucart = document.getElementById('menu');
+    document.getElementsByName('combos').forEach(e=>{
+        e.addEventListener('click', function(){
+            //menucart.innerHTML = "";
+            var div = document.createElement('div')
+            div.className = "comida"
+            var nombre = document.createElement('div')
+            var a ;
+            var precio = menu[e.id]['precio'][0];
+            switch(e.id){
+                case "comboInfantil":
+                    a = "Combo Infantil"
+                break;
+                case "comboPersonal":
+                    a = "Combo Personal"
+
+                break;
+                case "superCombo":
+                    a = "Super Combo"
+                break;
+            }
+            nombre.innerHTML += `<p class='name'>${a} </p>`
+          
+            div.appendChild(nombre);
+           var menuIn = menu[e.id]['ingredientes']
+            for(var index = 0 ; index <= 4; index++){
+                if(menuIn[index] == undefined){
+
+                }else{
+                    div.innerHTML += `<p>${menuIn[index]}</p>`
+
+                }
+            }
+            var cuentaactual = inputFinal.value;
+            console.log(cuentaactual);
+            console.log(precio);
+            var cuenta = parseFloat(cuentaactual)+parseFloat(precio).toFixed(2)
+            inputFinal.value = cuenta;
+            menucart.appendChild(div);
+
+
+
+        })
+    })
+}

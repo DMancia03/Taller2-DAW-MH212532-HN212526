@@ -1,0 +1,20 @@
+{
+    "superCombo" : {
+        "ingredientes" : [
+            "3 piezas de pollo", "Ensalada", "Papa frita", "Bebida grande"
+        ],
+        "precio" : "7.25"
+    },
+    "comboPersonal" : {
+        "ingredientes" : [
+            "2 piezas de pollo", "Papa frita", "Bebida mediana"
+        ],
+        "precio" : "5.75"
+    },
+    "comboInfantil" : {
+        "ingredientes" : [
+            "1 pieza de pollo", "Papa frita", "Bebida pequeña"
+        ],
+        "precio" : "3.50"
+    }
+}
