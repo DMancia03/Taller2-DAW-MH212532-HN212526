@@ -23,7 +23,7 @@
     gap: 1em;
 }
 
-.text-sug-1{
+.txtSugerencia{
     background-color: var(--azuel2);
     color: var(--azulFuerte);
     border: var(--azulFuerte) solid 2px;
@@ -34,14 +34,27 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     resize: none;
     outline: none;
-}
-
-.text-sug-change{
     background-color: var(--azuelSuave);
 }
 
-.text-sug-1::placeholder{
+.comentarios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border: var(--azulFuerte) solid 2px;
+    border-radius: 1rem;
+    height: 100%;
+    max-height: 100%;
+}
+
+#txtSugerencia::placeholder{
     color: var(--azulFuerte);
+}
+
+.hidden{
+    display:none;
 }
 
 #caja-img-sugerencia{

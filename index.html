@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/caja-sugerencias.css">
     <script src="js/combos.js"></script>
+    <script src="js/sugerencia.js"></script>
 </head>
 <body>
     <header class="header">
@@ -110,7 +111,16 @@
                 <h4>Ayúdanos a mejorar</h4>
             </div>
             <div id="caja-text-sugerencia">
-                <textarea name="txtSugerencia" id="txtSugerencia" class="text-sug-1" cols="50" rows="8" placeholder="Escribenos tu sugerencia, para ello da click aquí o presione 'crtl+E'..." disabled></textarea>
+                <div id="comentarios" class="comentarios">
+                    <h3><span class="icon-plus"></span> Agrega tu comentario</h3>
+                    <p>No hay comentarios por el momento, se el primero y escribenos tu sugerencia, para ello 
+                        da click aquí o presione 'crtl+E'.</p>
+                </div>
+                <div id="comentarioSee" class="comentarios hidden">
+                    <h4>Alguien comento:</h4>
+                    <p id="mensaje"></p>
+                </div>
+                <textarea name="txtSugerencia" id="txtSugerencia" class="hidden txtSugerencia" cols="50" rows="8" placeholder="Escribenos tus ideas y experiencias..."></textarea>
             </div>
             <div id="caja-img-sugerencia">
                 <img src="imgs/suggestion-icon.svg" alt="Dejanos tu sugerencia.png" class="img-1">
