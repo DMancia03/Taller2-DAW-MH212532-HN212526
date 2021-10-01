@@ -1,16 +1,24 @@
 window.onload = function(){
-    var sugerencia = document.getElementById("txtSugerencia");
     var comentario = document.getElementById("comentarios");
 
-    comentario.addEventListener("click" ,function() {
+    comentario.addEventListener("click", function() {
         hiddenComentarios();
+        alert("1");
     });
+
+    comentario.onclick = hiddenComentarios;
     
-    window.addEventListener("keydown" , function(e) {
-        window.addEventListener("keypress", function(segunda) {
-            listenCKey(e.key, segunda.key);
-        });
-    });
+    document.onkeydown = function(e){
+        e = e || event;
+        if ( e.ctrlKey && e.keyCode == 'E'.charCodeAt(0) ) {
+           hiddenComentarios();
+            return false;
+        }
+        if( e.ctrlKey && e.keyCode == 'S'.charCodeAt(0) ) {
+            hiddenTxt();
+            return false;
+        }
+    };
 }
 
 function hiddenComentarios() {
@@ -26,18 +34,12 @@ function hiddenTxt() {
     var comentario = document.getElementById("comentarioSee");
     var mensaje = document.getElementById("mensaje");
 
-    mensaje.innerText = sugerencia.value;
+    if( sugerencia.value == "" ){
+        alert("Escriba algo por favor, apreciado cliente.");
+    }else{
+        mensaje.innerText = sugerencia.value;
 
-    comentario.className = "comentarios";
-    sugerencia.className = "hidden";
-}
-
-function listenCKey(pri, seg) {
-    console.log(pri + seg);
-
-    if(pri == "Control" && seg == "e"){
-        hiddenComentarios();
-    }else if(pri == "Control" && seg == "s"){
-        hiddenTxt();
+        comentario.className = "comentarios";
+        sugerencia.className = "hidden";
     }
 }
