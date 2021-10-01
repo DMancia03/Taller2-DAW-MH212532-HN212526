@@ -169,7 +169,7 @@ function   escogerProducto(productos){
 
             document.getElementById(e.id + "_number").onchange = function(){
                 if(this.value === 0){
-                   document.getElementById(e.id + "_box")= null
+                    document.getElementById('demas').removeChild( "" +  e.id + "_box" )
                    
                 }else{
                     var cantidad = this.value; 
