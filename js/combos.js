@@ -1,4 +1,7 @@
 //Objeto JSON ----------------------------------------------------
+//Sirven de almacenamiento para los productos
+
+//Combos
 const combosDB = {
     "superCombo" : {
         "ingredientes" : [
@@ -20,6 +23,7 @@ const combosDB = {
     }
 }
 
+//Productos
 const productos = {
     "acompañante1" : {
         "nombre" : "Ensalada",
@@ -63,10 +67,15 @@ const productos = {
     }
 }
 //Objeto JSON ----------------------------------------------------
+
 var total = 0;
+
+//Cargamos nuestro inicio
 window.onload = Inicio;
 
 var comboanterior;
+
+//Funcion main
 function Inicio(){
     //Variable para la caja de comentarios
     var comentario = document.getElementById("comentarios");
@@ -96,15 +105,18 @@ function Inicio(){
         const productos = request.response;
         escogerProducto(productos);
     }*/
+
+    //Pasamos nuestro productos json a la funcion menu
     escogerProducto(productos);
+
     //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
 
+    //Agregamos el evento click a la caja de comentarios para que puedan agregar un comentario
     comentario.addEventListener("click", function() {
         hiddenComentarios();
     });
-
-    comentario.onclick = hiddenComentarios;
     
+    //Agregamos el  evento keydown para que puedan agregar un comentario o guardarlo
     document.onkeydown = function(e){
         e = e || event;
         if ( e.ctrlKey && e.keyCode == 'E'.charCodeAt(0) ) {
@@ -219,6 +231,8 @@ function escogerMenu(menu){
 }
 
 //FUNCIONES: CAJA DE SUGERENCIAS  --------------------------------------------
+
+//Se usa para ocultar la caja que invita a comentar para que aparezca el txtarea
 function hiddenComentarios() {
     var sugerencia = document.getElementById("txtSugerencia");
     var comentario = document.getElementById("comentarios");
@@ -229,11 +243,13 @@ function hiddenComentarios() {
     }
 }
 
+//Se usa para ocultar el txtarea y mostrar todos los comentarios hechos, o uno
 function hiddenTxt() {
     var sugerencia = document.getElementById("txtSugerencia");
     var comentario = document.getElementById("comentarioSee");
     var mensaje = document.getElementById("mensaje");
 
+    //Validamos que no este vacio el textarea
     if( sugerencia.value == "" ){
         alert("Escriba algo por favor, apreciado cliente.");
     }else{
