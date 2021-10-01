@@ -136,23 +136,7 @@ input[type = 'checkbox']{
     align-items: center;
     justify-content: flex-end;
 }
-.precioInput{
-    flex-direction: row;
-    justify-content: center;
-    font-size: larger;
-    width: 100%;
-    color: rgb(148, 148, 148);
-}
-.precioInput label{
-    width: 50%;
-}
-#txtFinal{
-    border: none;
-    background-color: white;
-    font-size: 1.3em;
-    width: fit-content;
-    width: 30%;
-}
+
 .btnComprar p{
     color:  white;
     background-color: #275AA9;
@@ -185,6 +169,24 @@ input[type = 'checkbox']{
 
 .comida:nth-child(odd){
     background-color: var(--azuelSuave);
+}
+
+/*---------------------------------------------------------*/
+
+.precioInput{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+    gap: 1em;
+    color: rgb(148, 148, 148);
+}
+
+#txtFinal{
+    background-color: white;
+    font-size: 1.3em;
+    width: fit-content;
+    outline: none;
+    border: none;
 }
 
 /*---------------------------------------------------------*/
