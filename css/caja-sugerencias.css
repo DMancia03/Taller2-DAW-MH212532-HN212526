@@ -1,6 +1,8 @@
 :root{
     --azul : #275AA9;
     --azul2 : #4489A8;
+    --azulFuerte : #011826;
+    --azuelSuave: #03588C;
     --amarillo: #FFEA04;
     --cafe1:#D3983F;
     --cafe2: #E07F5E;
@@ -16,7 +18,21 @@
 
 #caja-sugerencias{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    color: var(--azulFuerte);
+}
+
+.text-sug-1{
+    background-color: var(--azul2);
+    color: var(--azulFuerte);
+    border: var(--azulFuerte) solid 2px;
+    border-radius: 1rem;
+    padding: 1em;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: none;
+    outline: none;
 }
 
 #caja-img-sugerencia{
