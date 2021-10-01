@@ -1,5 +1,10 @@
-window.onload= Inicio;
+window.onload = Inicio;
+
+
 function Inicio(){
+    //Variable para la caja de comentarios
+    var comentario = document.getElementById("comentarios");
+
     //constante para obener el JSON
     const request = new XMLHttpRequest();
     
@@ -13,6 +18,28 @@ function Inicio(){
         const menu = request.response;
         escogerMenu(menu);
     }
+
+    //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
+
+    comentario.addEventListener("click", function() {
+        hiddenComentarios();
+    });
+
+    comentario.onclick = hiddenComentarios;
+    
+    document.onkeydown = function(e){
+        e = e || event;
+        if ( e.ctrlKey && e.keyCode == 'E'.charCodeAt(0) ) {
+           hiddenComentarios();
+            return false;
+        }
+        if( e.ctrlKey && e.keyCode == 'S'.charCodeAt(0) ) {
+            hiddenTxt();
+            return false;
+        }
+    };
+
+    //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
    
 }
 
@@ -59,3 +86,28 @@ function escogerMenu(menu){
         })
     })
 }
+
+//FUNCIONES: CAJA DE SUGERENCIAS  --------------------------------------------
+function hiddenComentarios() {
+    var sugerencia = document.getElementById("txtSugerencia");
+    var comentario = document.getElementById("comentarios");
+
+    comentario.className = "hidden";
+    sugerencia.className = "txtSugerencia";
+}
+
+function hiddenTxt() {
+    var sugerencia = document.getElementById("txtSugerencia");
+    var comentario = document.getElementById("comentarioSee");
+    var mensaje = document.getElementById("mensaje");
+
+    if( sugerencia.value == "" ){
+        alert("Escriba algo por favor, apreciado cliente.");
+    }else{
+        mensaje.innerText = sugerencia.value;
+
+        comentario.className = "comentarios";
+        sugerencia.className = "hidden";
+    }
+}
+//FUNCIONES: CAJA DE SUGERENCIAS  --------------------------------------------
