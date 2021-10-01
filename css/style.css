@@ -153,6 +153,8 @@ input[type = 'checkbox']{
     padding: 5px;
 }
 #demas .comida{
+    height: 3em;
+    padding: 5px;
     display: grid;
     grid-template-columns: 1fr;
     grid-area: 5px;
