@@ -17,12 +17,32 @@
     padding: 1.2em;
     font-family: 'Lobster', cursive;
     border-bottom: solid gray 1px;
+    color: #E07F5E;
 }
 .header span{
     font-size: 1.6em;
 }
+#body{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
 
-.provisional{
-    display: block;
-    border: black solid 1px;
+
+}
+#body article{
+   height: 80vh;
+   border: solid 1px;
+   padding: 2em;
+}
+#body article h1{
+    font-size:  1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #body{
+        grid-template-columns: 1fr 0.5fr;
+    
+    
+    }
 }
