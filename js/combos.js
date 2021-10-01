@@ -1,6 +1,6 @@
 window.onload = Inicio;
 
-
+var comboanterior;
 function Inicio(){
     //Variable para la caja de comentarios
     var comentario = document.getElementById("comentarios");
@@ -50,12 +50,19 @@ function escogerMenu(menu){
     var menucart = document.getElementById('menu');
     document.getElementsByName('combos').forEach(e=>{
         e.addEventListener('click', function(){
-            //menucart.innerHTML = "";
+            var cuentaactual = parseFloat(inputFinal.value)
+            if(comboanterior!=undefined){
+                var menos =  parseFloat( menu[comboanterior]['precio']);
+                total = cuentaactual-menos
+                inputFinal.value = total;
+            }
+            menucart.innerHTML = "";
             var div = document.createElement('div')
             div.className = "comida"
             var nombre = document.createElement('div')
             var a ;
-            var precio = menu[e.id]['precio'][0];
+         
+            var precio = parseFloat(menu[e.id]['precio']);
             switch(e.id){
                 case "comboInfantil":
                     a = "Combo Infantil"
@@ -80,11 +87,11 @@ function escogerMenu(menu){
 
                 }
             }
-            var cuentaactual = 
+ 
             menucart.appendChild(div);
 
-
-
+            inputFinal.value = cuentaactual+precio
+            comboanterior = e.id;
         })
     })
 }
