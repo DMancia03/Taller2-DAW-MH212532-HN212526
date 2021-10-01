@@ -42,21 +42,7 @@ function Inicio(){
     //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
    
     //PARTE DE MENU
-
-
-    const request = new XMLHttpRequest();
     
-    //pedimos abrir el JSON con los menus
-    request.open('GET', '../db/combos.json');
-    //El tipo de datos que  vamos a obtener
-    request.responseType = 'json';
-    request.send();
-    //función en la cual nos vamos a guiar cuando se termine de leer el JSON
-    request.onload =  function() {
-        const menu = request.response;
-        escogerMenu(menu);
-    }
-   
 }
 
 function escogerMenu(menu){
