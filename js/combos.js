@@ -19,6 +19,49 @@ const combosDB = {
         "precio" : "3.50"
     }
 }
+
+const productos = {
+    "acompañante1" : {
+        "nombre" : "Ensalada",
+        "precio" : "1.50"
+    },
+    "acompañante2" : {
+        "nombre" : "Papa frita",
+        "precio" : "1.25"
+    },
+    "pollo1" : {
+        "nombre" : "Pieza de pollo grande",
+        "precio" : "1.75"
+    },
+    "pollo2" : {
+        "nombre" : "Pieza de pollo mediana",
+        "precio" : "1.50"
+    },
+    "pollo3" : {
+        "nombre" : "Pieza de pollo pequeña",
+        "precio" : "1.25"
+    },
+    "bebida1" : {
+        "nombre" : "Bebida grande",
+        "precio" : "1.50"
+    },
+    "bebida2" : {
+        "nombre" : "Bebida mediana",
+        "precio" : "1.25"
+    },
+    "bebida3" : {
+        "nombre" : "Bebida pequeña",
+        "precio" : "1.00"
+    },
+    "bebida4" : {
+        "nombre" : "Café 0.50",
+        "precio" : "1.50"
+    },
+    "postre" : {
+        "nombre" : "Postre",
+        "precio" : "1.25"
+    }
+}
 //Objeto JSON ----------------------------------------------------
 
 window.onload = Inicio;
@@ -44,7 +87,7 @@ function Inicio(){
     escogerMenu(combosDB);
 
 
-    request.open('GET', '../db/productos.json');
+   /* request.open('GET', '../db/productos.json');
     //El tipo de datos que  vamos a obtener
     request.responseType = 'json';
     request.send();
@@ -52,8 +95,8 @@ function Inicio(){
     request.onload =  function() {
         const productos = request.response;
         escogerProducto(productos);
-    }
-
+    }*/
+    escogerProducto(productos);
     //PARTE: CAJA DE SUGERENCIAS   ------------------------------------------
 
     comentario.addEventListener("click", function() {
@@ -101,7 +144,6 @@ function   escogerProducto(productos){
             menucart.appendChild(div);
 
             inputFinal.value = cuentaactual+precio
-            comboanterior = e.id;
         })
     })
 }
@@ -149,7 +191,7 @@ function escogerMenu(menu){
             }
  
             menucart.appendChild(div);
-
+            alert(cuentaactual+precio);
             inputFinal.value = cuentaactual+precio
             comboanterior = e.id;
         })
@@ -184,52 +226,3 @@ function hiddenTxt() {
 //FUNCIONES: CAJA DE SUGERENCIAS  --------------------------------------------
 
 //FUNCIONES DEL MENU
-
-
-function escogerMenu(menu){
-    var inputFinal = document.getElementById('txtFinal');
-    var menucart = document.getElementById('menu');
-    document.getElementsByName('combos').forEach(e=>{
-        e.addEventListener('click', function(){
-            //menucart.innerHTML = "";
-            var div = document.createElement('div')
-            div.className = "comida"
-            var nombre = document.createElement('div')
-            var a ;
-            var precio = menu[e.id]['precio'][0];
-            switch(e.id){
-                case "comboInfantil":
-                    a = "Combo Infantil"
-                break;
-                case "comboPersonal":
-                    a = "Combo Personal"
-
-                break;
-                case "superCombo":
-                    a = "Super Combo"
-                break;
-            }
-            nombre.innerHTML += `<p class='name'>${a} </p>`
-          
-            div.appendChild(nombre);
-           var menuIn = menu[e.id]['ingredientes']
-            for(var index = 0 ; index <= 4; index++){
-                if(menuIn[index] == undefined){
-
-                }else{
-                    div.innerHTML += `<p>${menuIn[index]}</p>`
-
-                }
-            }
-            var cuentaactual = inputFinal.value;
-            console.log(cuentaactual);
-            console.log(precio);
-            var cuenta = parseFloat(cuentaactual)+parseFloat(precio).toFixed(2)
-            inputFinal.value = cuenta;
-            menucart.appendChild(div);
-
-
-
-        })
-    })
-}
