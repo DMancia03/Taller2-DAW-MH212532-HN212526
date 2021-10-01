@@ -21,3 +21,8 @@
 .header span{
     font-size: 1.6em;
 }
+
+.provisional{
+    display: block;
+    border: black solid 1px;
+}
