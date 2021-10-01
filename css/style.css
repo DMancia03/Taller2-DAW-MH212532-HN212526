@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root{
+    --azul : #275AA9;
+    --amarillo: #FFEA04;
+    --cafe1:#D3983F;
+    --cafe2: #E07F5E;
+    --beich: #F2D8C3;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    padding: 1.2em;
+    font-family: 'Lobster', cursive;
+    border-bottom: solid gray 1px;
+}
+.header span{
+    font-size: 1.6em;
+}
